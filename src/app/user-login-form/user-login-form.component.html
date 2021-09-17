@@ -1,0 +1,22 @@
+<h3>User Login Form</h3>
+<form [formGroup]="form" novalidate class="col-xs-6">
+    <div class="form-group">
+      <label class="center-block">Username:
+        <input class="form-control" [formControl]="username">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Password:
+        <input class="form-control" [formControl]="password" type="password" required>
+      </label>
+    </div>
+    <button class="btn btn-blue text-center" (click)="onSubmit()">
+      Login
+    </button>
+</form>
+
+<div class="col-xs-6">
+    <p>Username control: {{ username.errors | json }}</p>
+    <p>Password control: {{ password.errors | json }}</p>
+    <p>Form: {{ form.errors | json }} Valid: {{ form.valid }}</p>
+</div>
